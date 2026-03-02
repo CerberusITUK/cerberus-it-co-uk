@@ -104,6 +104,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".pricing__amount[data-price]")
   );
 
+  pricingAmounts.forEach(amountEl => {
+    if (amountEl.dataset.prefix && amountEl.dataset.suffix) return;
+    const text = amountEl.textContent || "";
+    const match = text.match(/^(.*?)[0-9.,]+(.*)$/);
+    if (match) {
+      amountEl.dataset.prefix = match[1];
+      amountEl.dataset.suffix = match[2];
+    } else {
+      amountEl.dataset.prefix = "£";
+      amountEl.dataset.suffix = "";
+    }
+  });
+
   if (pricingTabsContainer && pricingTabs.length && pricingIndicator && pricingActiveBg) {
     const tabsStyles = getComputedStyle(pricingTabsContainer);
     const tabsPaddingLeft = parseFloat(tabsStyles.paddingLeft) || 0;
@@ -119,7 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updatePricingAmounts = billing => {
       const isYearly = billing === "yearly";
-      const formatPrice = value => `$${Math.round(value).toLocaleString("en-US")}`;
+      const formatPrice = (value, element) => {
+        const prefix = element.dataset.prefix ?? "£";
+        const suffix = element.dataset.suffix ?? "";
+        const formattedNumber = Math.round(value).toLocaleString("en-GB");
+        return `${prefix}${formattedNumber}${suffix}`;
+      };
       const animatePriceChange = (element, targetValue) => {
         const currentText = element.textContent.replace(/[^0-9.]/g, "");
         const startValue = Number(currentText) || Number(element.dataset.price) || targetValue;
@@ -134,12 +152,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const progress = Math.min((now - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           const value = startValue + (targetValue - startValue) * eased;
-          element.textContent = formatPrice(value);
+          element.textContent = formatPrice(value, element);
 
           if (progress < 1) {
             element._priceAnimation = requestAnimationFrame(step);
           } else {
-            element.textContent = formatPrice(targetValue);
+            element.textContent = formatPrice(targetValue, element);
             element._priceAnimation = null;
           }
         };
@@ -150,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pricingAmounts.forEach(amountEl => {
         const basePrice = Number(amountEl.dataset.price);
         if (Number.isNaN(basePrice)) return;
-        const computedPrice = isYearly ? Math.round(basePrice * 0.7) : basePrice;
+        const computedPrice = isYearly ? Math.round(basePrice * 0.8) : basePrice;
         animatePriceChange(amountEl, computedPrice);
       });
     };
@@ -201,12 +219,55 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll(".faq__trigger").forEach(trigger => {
+    const content = trigger.nextElementSibling;
+    if (!content) return;
+
+    const setMaxHeightAuto = el => {
+      el.style.maxHeight = "none";
+    };
+
+    const collapse = el => {
+      el.style.maxHeight = `${el.scrollHeight}px`;
+      requestAnimationFrame(() => {
+        el.style.maxHeight = "0px";
+        el.style.opacity = "0";
+      });
+
+      const onEnd = event => {
+        if (event.target !== el) return;
+        el.hidden = true;
+        el.style.maxHeight = "0px";
+        el.removeEventListener("transitionend", onEnd);
+      };
+
+      el.addEventListener("transitionend", onEnd);
+    };
+
+    const expand = el => {
+      el.hidden = false;
+      el.style.maxHeight = "0px";
+      el.style.opacity = "0";
+      requestAnimationFrame(() => {
+        el.style.maxHeight = `${el.scrollHeight}px`;
+        el.style.opacity = "1";
+      });
+
+      const onEnd = event => {
+        if (event.target !== el) return;
+        setMaxHeightAuto(el);
+        el.removeEventListener("transitionend", onEnd);
+      };
+
+      el.addEventListener("transitionend", onEnd);
+    };
+
     trigger.addEventListener("click", () => {
       const expanded = trigger.getAttribute("aria-expanded") === "true";
-      const content = trigger.nextElementSibling;
       trigger.setAttribute("aria-expanded", String(!expanded));
-      if (content) {
-        content.hidden = expanded;
+      if (expanded) {
+        collapse(content);
+      } else {
+        expand(content);
       }
     });
   });
