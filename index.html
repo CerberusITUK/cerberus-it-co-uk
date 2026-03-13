@@ -18,16 +18,16 @@
       <div class="site-header__inner">
         <a class="site-logo" href="#hero">
           <img src="assets/CerberusLogo-Transparent.png" alt="Cerberus IT" />
-          <span class="logo-text"><span class="site-logo__mark">Cerberus</span> <span class="site-logo__accent">IT</span></span>
+          <span class="logo-text"><span class="site-logo__mark">Cerberus <span class="site-logo__accent">IT</span></span></span>
         </a>
         <nav class="site-nav" id="site-nav" aria-label="Primary">
           <span class="site-nav__highlight" aria-hidden="true"></span>
           <ul>
             <li><a href="#hero" class="is-active">Home</a></li>
-            <li><a href="#features">Solutions</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Security</a></li>
-            <li><a href="#customers">Testimonials</a></li>
+            <li><a href="#features">Core Services</a></li>
+            <li><a href="#who-we-support">Clients</a></li>
+            <li><a href="#beyond-it">Why Cerberus <span class="site-logo__accent">IT</span></a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -59,7 +59,7 @@
               </svg>
             </a>
           </div>
-          <a class="button-primary" href="#contact">Talk to Us</a>
+          <button class="button-primary" type="button" data-open-contact>Let’s Talk</button>
         </div>
       </div>
     </header>
@@ -79,14 +79,14 @@
           <div class="hero__intro section-intro section-intro--hero">
             <span class="section-pill">Guardians of your business IT</span>
             <div class="hero__headline">
-              <h1 class="section-intro__title">Cerberus IT</h1>
+              <h1 class="section-intro__title">Cerberus <span class="site-logo__accent">IT</span></h1>
             </div>
             <p class="section-intro__text section-intro__text--lead">
               We manage your technology so your team stays productive, secure, and confident — anywhere they work.
             </p>
             <div class="hero__actions">
-              <a class="button-primary" href="#pricing">Schedule a call</a>
-              <a class="button-secondary" href="#features">See how we help</a>
+              <button class="button-primary" type="button" data-open-contact>Let’s Talk</button>
+              <a class="button-secondary" href="#features">Explore More</a>
             </div>
             <p class="section-intro__text section-intro__text--muted hero__microline">
               Real engineers | Rapid response | Technology that just works.
@@ -176,13 +176,13 @@
         </div>
 
         <div class="features__actions">
-          <a class="button-primary" href="#contact">Discuss your needs</a>
-          <a class="button-secondary" href="#services">Explore more</a>
+          <button class="button-primary" type="button" data-open-contact>Let’s Talk</button>
+          <button class="button-secondary" type="button" data-open-contact>Explore more</button>
         </div>
       </div>
     </section>
 
-    <section class="includes section-stack">
+    <section class="includes section-stack" id="service-overview">
       <div class="features__accordion">
         <div class="features__includes-header section-intro section-intro--narrow">
           <span class="section-pill">Service Overview</span>
@@ -196,88 +196,52 @@
         <div class="faq__list faq__list--features" role="list">
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Managed IT Support</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>What’s covered in day-to-day support?</span>
             </button>
             <div class="faq__content" hidden>
-              <p>Your IT, managed by us — day-to-day helpdesk, rapid response, and hands-on support when you need it.</p>
-              <p>
-                <strong>Includes:</strong> Helpdesk • Remote &amp; onsite support • Incident management • Vendor coordination • End-user
-                support
-              </p>
-              <p>
-                <strong>Why it matters:</strong> Quick fixes, proactive monitoring, and real engineers mean your team stays productive and
-                your business keeps running smoothly.
-              </p>
+              <p>Every user gets unlimited helpdesk access, remote fixes, onsite escalation, and proactive monitoring bundled into one fee.</p>
+              <p><strong>Includes:</strong> Multi-channel helpdesk, device onboarding, vendor escalation, and incident ownership.</p>
+              <p><strong>Result:</strong> Your team calls one number and we handle the rest—no ticket triage or finger pointing.</p>
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Cyber Security &amp; Compliance</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>How do you keep us compliant?</span>
             </button>
             <div class="faq__content" hidden>
-              <p>Protect your people, data, and devices with a security-first approach.</p>
-              <p>
-                <strong>Includes:</strong> Endpoint protection • Email security &amp; anti-phishing • Multi-factor authentication (MFA) •
-                Patch management • Backup &amp; recovery • GDPR &amp; cyber insurance alignment
-              </p>
-              <p>
-                <strong>Why it matters:</strong> Reduce risk, stay compliant, and prevent disruptions before they happen — without slowing
-                your business down.
-              </p>
+              <p>We baseline every client against Cyber Essentials and ISO controls, then layer policies, logging, and training that match your industry.</p>
+              <p><strong>Includes:</strong> MFA, device encryption, privileged access reviews, phishing simulations, backup testing, and insurer-ready reporting.</p>
+              <p><strong>Result:</strong> Audits become simple checklists instead of stressful fire drills.</p>
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Cloud &amp; Modern Workplace</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>Can you support hybrid working?</span>
             </button>
             <div class="faq__content" hidden>
-              <p>Enable your team to work securely and efficiently — in the office, at home, or on the move.</p>
-              <p>
-                <strong>Includes:</strong> Microsoft 365 • SharePoint &amp; OneDrive • Teams • Secure remote access • Device management •
-                Licensing optimisation
-              </p>
-              <p>
-                <strong>Why it matters:</strong> Modern tools, properly configured and managed, keep your people productive and connected
-                while protecting your digital assets.
-              </p>
+              <p>Yes—secure remote access, zero-trust policies, and collaboration tooling are standard in our managed plans.</p>
+              <p><strong>Includes:</strong> Microsoft 365 optimisation, device posture checks, passwordless sign-in, and guided change management.</p>
+              <p><strong>Result:</strong> Staff can move between home, office, and client sites without IT friction.</p>
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Strategic IT &amp; Projects</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>What about projects and strategy?</span>
             </button>
             <div class="faq__content" hidden>
-              <p>Technology that supports your growth, efficiency, and resilience.</p>
-              <p>
-                <strong>Includes:</strong> Technology roadmaps • Quarterly business reviews • Budget planning • Compliance strategy • Project
-                delivery • Executive reporting
-              </p>
-              <p>
-                <strong>Why it matters:</strong> We help you make informed IT decisions, plan for the future, and deliver projects that align
-                with your business goals.
-              </p>
+              <p>Quarterly business reviews map your goals to a living roadmap covering infrastructure, apps, security, and budgets.</p>
+              <p><strong>Includes:</strong> vCIO leadership, board-ready reporting, project scoping, and post-implementation reviews.</p>
+              <p><strong>Result:</strong> Technology investments stay aligned to growth and risk priorities.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="who-support section-stack section-stack--spaced" id="benefits">
+    <section class="who-support section-stack section-stack--spaced" id="who-we-support">
         <div class="who-support__intro section-intro section-intro--narrow">
           <span class="section-pill">WHO DO WE SUPPORT</span>
           <h2 class="section-intro__title">Every stage needs a guardian</h2>
@@ -446,11 +410,11 @@
         </div>
       </section>
 
-      <section class="features section-stack" id="additonal-services">
+      <section class="features section-stack" id="beyond-it">
       <div class="features__intro section-intro section-intro--hero">
-        <span class="section-pill">Beyond IT — The Cerberus Advantage</span>
+        <span class="section-pill">Why Cerberus <span class="site-logo__accent">IT</span></span>
         <h1 class="section-intro__title">
-          Beyond IT — The Cerberus Advantage
+          Beyond IT — The Cerberus <span class="site-logo__accent">IT</span> Advantage
         </h1>
         <p class="section-intro__text">
           We go further than managing technology. Every service is designed to protect, empower, and grow your business — delivering outcomes you can see and trust.
@@ -473,14 +437,14 @@
           </div>
           <div class="cards__tile cards__tile--with-media card-surface">
             <div class="cards__media">
-              <img src="assets/image copy.png" alt="Case results trophy" />
+              <img src="assets/image copy 4.png" alt="Insights and guidance" />
             </div>
             <div class="cards__content">
               <span class="card-icon" aria-hidden="true">
-                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
               </span>
-              <h3>Case Results</h3>
-              <p>Real client stories show the difference we make — from reduced downtime to seamless project delivery, our impact is measurable.</p>
+              <h3>Insights &amp; Guidance</h3>
+              <p>Dashboards, security tips, and strategic advice help you make informed IT decisions, stay ahead of risks, and plan for growth.</p>
             </div>
           </div>
         </div>
@@ -494,7 +458,7 @@
                 <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
               </span>
               <h3>Specialist Services</h3>
-              <p>Advanced capabilities that complement Core Services — MDM, firewalls, disaster recovery testing, compliance audits, and vendor management.</p>
+              <p>Complementing Core Services — MDM, firewalls, disaster recovery testing, compliance audits, and vendor management.</p>
             </div>
           </div>
           <div class="cards__tile cards__tile--with-media card-surface">
@@ -509,23 +473,11 @@
               <p>ISO certifications, partner badges, and industry awards highlight our commitment to quality, security, and professionalism.</p>
             </div>
           </div>
-          <div class="cards__tile cards__tile--with-media card-surface">
-            <div class="cards__media">
-              <img src="assets/image copy 4.png" alt="Insights and guidance" />
-            </div>
-            <div class="cards__content">
-              <span class="card-icon" aria-hidden="true">
-                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-              </span>
-              <h3>Insights &amp; Guidance</h3>
-              <p>Dashboards, security tips, and strategic advice help you make informed IT decisions, stay ahead of risks, and plan for growth.</p>
-            </div>
-          </div>
         </div>
 
         <div class="features__actions">
-          <a class="button-primary" href="#contact">Discuss your needs</a>
-          <a class="button-secondary" href="#services">Explore more</a>
+          <button class="button-primary" type="button" data-open-contact>Let’s Talk</button>
+          <button class="button-secondary" type="button" data-open-contact>Explore more</button>
         </div>
       </div>
     </section>
@@ -533,7 +485,7 @@
     <section class="about section-stack" id="about">
         <div class="founder__inner">
           <div class="services__intro section-intro">
-            <span class="section-pill">About Cerberus</span>
+            <span class="section-pill">About Cerberus <span class="site-logo__accent">IT</span></span>
             <h2 class="section-intro__title">Built on trust. Driven by protection.</h2>
           </div>
           <div class="founder__quote">
@@ -541,19 +493,12 @@
               Founded in 2004, based in the UK, we partner with organisations of all sizes to keep their technology secure, accessible,
               and productive.
             </p>
-            <div class="founder__profile">
-              <div class="founder__avatar" aria-hidden="true">
-                <div class="founder__avatar-media">
-                  <img
-                    src="assets/founder-avatar.avif"
-                    alt="Avatar of the Managing Director"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="founder__details">
-                <span class="founder__name">Dan Kerr</span>
-                <span class="founder__badge">Managing Director, Cerberus IT</span>
+            <div class="founder__profile customers__author">
+              <img src="assets/B824F986-372A-40E8-97FF-E5850DC8B33F_1_105_c.jpeg" alt="Dan Kerr" loading="lazy" />
+              <span class="customers__author-divider" aria-hidden="true"></span>
+              <div class="customers__author-info">
+                <span class="customers__author-name">Dan Kerr</span>
+                <span class="customers__author-role">Managing Director, Cerberus <span class="site-logo__accent">IT</span></span>
               </div>
             </div>
           </div>
@@ -754,7 +699,7 @@
         </div>
       </section>
 
-      <section class="customers section-stack">
+      <section class="customers section-stack" id="customers">
         <div class="customers__intro section-intro">
           <span class="section-pill">Testimonials</span>
           <h2 class="section-intro__title">Trusted by organisations of every size</h2>
@@ -768,10 +713,9 @@
             <div class="cards__content customers__story-content stack-col">
               <h4 class="customers__quote">
                 <span class="customers__quote-text">
-                  We don’t just manage IT — we care about your business. At Cerberus, every client relationship is personal.<br> We take the time to understand your team, your goals, and your risk profile — then we tailor technology, security, and support to match. That’s why our clients trust us to keep their systems running, their data safe, and their teams productive.
+                  We don’t just manage IT — we care about your business. At Cerberus <span class="site-logo__accent">IT</span>, every client relationship is personal.<br> We take the time to understand your team, your goals, and your risk profile — then we tailor technology, security, and support to match. That’s why our clients trust us to keep their systems running, their data safe, and their teams productive.
                 </span>
               </h4>
-              <p class="customers__quote-muted"><br>See what our clients say:</p>
             </div>
           </article>
 
@@ -784,83 +728,68 @@
 
         <div class="customers__testimonials">
           <article class="customers__testimonial cards__tile cards__tile--stacked card-surface">
-            <div class="cards__content customers__testimonial-body stack-col">
-              <p>“The PDS have been supported by Cerberus since we started over 10 years ago. The help and support has been absolutely first class.”</p>
-            </div>
-            <div class="customers__author">
-              <img src="assets/testimonial-neil.jpg" alt="Neil Cawthorn" loading="lazy" />
-              <span class="customers__author-divider" aria-hidden="true"></span>
-              <div class="customers__author-info">
-                <span class="customers__author-name">Neil Cawthorn</span>
-                <a
-                  class="customers__author-role"
-                  href="https://thepds.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Director, PDS
-                </a>
+            <a class="customers__testimonial-link" href="https://thepds.net" target="_blank" rel="noopener noreferrer">
+              <div class="cards__content customers__testimonial-body stack-col">
+                <p>“The PDS have been supported by Cerberus <span class="site-logo__accent">IT</span> since we started over 10 years ago. The help and support has been absolutely first class.”</p>
               </div>
-            </div>
-            <div class="customers__testimonial-logo">
-              <img src="assets/pdslogo copy.png" alt="PDS" loading="lazy" />
-            </div>
+              <div class="customers__author">
+                <img src="assets/testimonial-neil.jpg" alt="Neil Cawthorn" loading="lazy" />
+                <span class="customers__author-divider" aria-hidden="true"></span>
+                <div class="customers__author-info">
+                  <span class="customers__author-name">Neil Cawthorn</span>
+                  <span class="customers__author-role">Director, PDS</span>
+                </div>
+              </div>
+              <div class="customers__testimonial-logo">
+                <img src="assets/pdslogo copy.png" alt="PDS" loading="lazy" />
+              </div>
+            </a>
           </article>
 
           <article class="customers__testimonial cards__tile cards__tile--stacked card-surface">
-            <div class="cards__content customers__testimonial-body stack-col">
-              <p>“Cerberus IT have supported Suffolk Family Carers for many years. The excellent care and attention that they provide to us as the customer is second to none.”</p>
-            </div>
-            <div class="customers__author">
-              <img src="assets/testimonial-kirsten.jpg" alt="Kirsten Alterson" loading="lazy" />
-              <span class="customers__author-divider" aria-hidden="true"></span>
-              <div class="customers__author-info">
-                <span class="customers__author-name">Kirsten Alterson</span>
-                <a
-                  class="customers__author-role"
-                  href="https://www.suffolkfamilycarers.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CEO, Suffolk Family Carers
-                </a>
+            <a class="customers__testimonial-link" href="https://www.suffolkfamilycarers.org" target="_blank" rel="noopener noreferrer">
+              <div class="cards__content customers__testimonial-body stack-col">
+                <p>“Cerberus <span class="site-logo__accent">IT</span> have supported Suffolk Family Carers for many years. The excellent care and attention that they provide to us as the customer is second to none.”</p>
               </div>
-            </div>
-            <div class="customers__testimonial-logo">
-              <img src="assets/sfclogo.png" alt="Suffolk Family Carers" loading="lazy" />
-            </div>
+              <div class="customers__author">
+                <img src="assets/testimonial-kirsten.jpg" alt="Kirsten Alterson" loading="lazy" />
+                <span class="customers__author-divider" aria-hidden="true"></span>
+                <div class="customers__author-info">
+                  <span class="customers__author-name">Kirsten Alterson</span>
+                  <span class="customers__author-role">CEO, Suffolk Family Carers</span>
+                </div>
+              </div>
+              <div class="customers__testimonial-logo">
+                <img src="assets/sfclogo.png" alt="Suffolk Family Carers" loading="lazy" />
+              </div>
+            </a>
           </article>
 
           <article class="customers__testimonial cards__tile cards__tile--stacked card-surface">
-            <div class="cards__content customers__testimonial-body stack-col">
-              <p>“Cerberus IT have provided us with an excellent service for many years. They respond quickly and efficiently when we have minor but urgent issues and are also brilliant at implementing larger-scale solutions.”</p>
-            </div>
-            <div class="customers__author">
-              <img src="assets/testimonial-kathryn.jpg" alt="Kathryn Kirton" loading="lazy" />
-              <span class="customers__author-divider" aria-hidden="true"></span>
-              <div class="customers__author-info">
-                <span class="customers__author-name">Kathryn Kirton</span>
-                <a
-                  class="customers__author-role"
-                  href="https://www.spillfestival.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  General Manager, SPILL Think Tank
-                </a>
+            <a class="customers__testimonial-link" href="https://www.spillfestival.com" target="_blank" rel="noopener noreferrer">
+              <div class="cards__content customers__testimonial-body stack-col">
+                <p>“Cerberus <span class="site-logo__accent">IT</span> have provided us with an excellent service for many years. They respond quickly and efficiently when we have minor but urgent issues and are also brilliant at implementing larger-scale solutions.”</p>
               </div>
-            </div>
-            <div class="customers__testimonial-logo customers__testimonial-logo--spill">
-              <img src="assets/spilllogo.png" alt="SPILL Think Tank" loading="lazy" />
-            </div>
+              <div class="customers__author">
+                <img src="assets/testimonial-kathryn.jpg" alt="Kathryn Kirton" loading="lazy" />
+                <span class="customers__author-divider" aria-hidden="true"></span>
+                <div class="customers__author-info">
+                  <span class="customers__author-name">Kathryn Kirton</span>
+                  <span class="customers__author-role">General Manager, SPILL Think Tank</span>
+                </div>
+              </div>
+              <div class="customers__testimonial-logo customers__testimonial-logo--spill">
+                <img src="assets/spilllogo.png" alt="SPILL Think Tank" loading="lazy" />
+              </div>
+            </a>
           </article>
         </div>
       </section>
 
-      <section class="comparison section-stack">
+      <section class="comparison section-stack" id="comparison">
         <div class="section-intro">
           <span class="section-pill">Comparison</span>
-          <h2 class="section-intro__title">Cerberus IT vs break/fix</h2>
+          <h2 class="section-intro__title">Cerberus <span class="site-logo__accent">IT</span> vs break/fix</h2>
           <p class="section-intro__text">
             Understand the difference between reactive support and a proactive managed partner.
           </p>
@@ -869,7 +798,7 @@
         <div class="comparison__grid">
           <article class="comparison__card card-surface">
             <div class="comparison__card-header">
-              <h3>Cerberus IT</h3>
+              <h3>Cerberus <span class="site-logo__accent">IT</span></h3>
             </div>
             <span class="comparison__divider" aria-hidden="true"></span>
             <ul class="comparison__list">
@@ -881,14 +810,7 @@
               <li>Tested backups and DR playbooks</li>
               <li>Friendly engineers who know your business</li>
             </ul>
-            <button class="button-primary" type="button">
-              Schedule a Call
-              <svg viewBox="0 0 256 256" role="presentation" aria-hidden="true">
-                <path
-                  d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"
-                ></path>
-              </svg>
-            </button>
+            <button class="button-primary" type="button" data-open-contact>Let’s Talk</button>
           </article>
 
           <article class="comparison__card card-surface">
@@ -953,12 +875,7 @@
               <p class="pricing__description">
                 Secure cloud services, device onboarding, and a rapid helpdesk for early teams.
               </p>
-              <button class="button-secondary pricing__cta" type="button">
-                Get Started
-                <svg viewBox="0 0 256 256" role="presentation" aria-hidden="true">
-                  <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
-                </svg>
-              </button>
+              <button class="button-secondary pricing__cta" type="button" data-open-contact>Get Started</button>
               <div class="pricing__divider" aria-hidden="true"></div>
             </div>
             <ul class="pricing__features">
@@ -973,18 +890,14 @@
             <div class="pricing__card-header stack-col">
               <span class="pricing__plan">Growing Businesses</span>
               <div class="pricing__price">
-                <span class="pricing__amount pricing__amount--custom">Custom Pricing</span>
+                <span class="pricing__amount" data-price="280">From £280</span>
+                <span class="pricing__cycle">/month</span>
               </div>
               <p class="pricing__description">Team Size: 4-20+</p>
               <p class="pricing__description">
                 Proactive monitoring, compliance tooling, and hybrid-working support as you add headcount.
               </p>
-              <button class="button-primary pricing__cta" type="button">
-                Get a Quote
-                <svg viewBox="0 0 256 256" role="presentation" aria-hidden="true">
-                  <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
-                </svg>
-              </button>
+              <button class="button-primary pricing__cta" type="button" data-open-contact>Get Started</button>
               <div class="pricing__divider" aria-hidden="true"></div>
             </div>
             <ul class="pricing__features">
@@ -1006,12 +919,7 @@
               <p class="pricing__description">
                 Infrastructure, compliance, onsite response, and executive reporting handled end to end.
               </p>
-              <button class="button-secondary pricing__cta" type="button">
-                Get a Quote
-                <svg viewBox="0 0 256 256" role="presentation" aria-hidden="true">
-                  <path d="M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z"></path>
-                </svg>
-              </button>
+              <button class="button-secondary pricing__cta" type="button" data-open-contact>Get Started</button>
               <div class="pricing__divider" aria-hidden="true"></div>
             </div>
             <ul class="pricing__features">
@@ -1037,7 +945,7 @@
         </div>
       </section>
 
-      <section class="team section-stack">
+      <section class="team section-stack" id="how-we-support">
         <div class="section-intro">
           <span class="section-pill">How we support you</span>
           <h2 class="section-intro__title">Real people, real locations</h2>
@@ -1051,7 +959,7 @@ The same support pillars you’ll experience day to day.
             <div class="cards__media cards__media--stacked">
               <img
                 src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80"
-                alt="Friendly Cerberus engineers"
+                alt="Friendly Cerberus IT engineers"
               />
             </div>
 
@@ -1127,66 +1035,92 @@ The same support pillars you’ll experience day to day.
         <div class="faq__list" role="list">
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>How can we reach the helpdesk?</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>How fast do you respond?</span>
             </button>
             <div class="faq__content" hidden>
-              “You and your staff will be able to easily contact us for assistance using the method that’s easiest for them —
-              Email, Web Helpdesk, Phone or Video.”
+              Critical issues are acknowledged within 15 minutes and resolved or escalated within one business hour. Non-urgent tickets are typically closed the same day.
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Do you keep remote staff secure?</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>Do you work with in-house IT teams?</span>
             </button>
             <div class="faq__content" hidden>
-              Yes. “Enable secure access to continue to be productive regardless of where your staff are” with anti-virus,
-              anti-phishing, MFA, and device management.
+              Absolutely. We provide co-managed options where Cerberus <span class="site-logo__accent">IT</span> handles monitoring, security, and escalation while your internal team focuses on projects.
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>What about backups and recovery?</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>What’s your onboarding process?</span>
             </button>
             <div class="faq__content" hidden>
-              We “Keep your business safe” with onsite and offsite scheduled, encrypted backups so data is always recoverable.
+              A 30-day onboarding covers documentation, discovery workshops, tooling deployment, and a readiness review before we take over support.
             </div>
           </article>
 
           <article class="faq__item card-surface" role="listitem">
             <button class="faq__trigger" aria-expanded="false">
-              <span>Where are you based for onsite visits?</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="faq__icon">
-                <path d="M12 5v14M5 12h14"></path>
-              </svg>
+              <span>Where do you provide onsite coverage?</span>
             </button>
             <div class="faq__content" hidden>
-              We are “located at the Innovation Centre on the Knowledge Gateway research and technology park at the University
-              of Essex.”
+              Our primary base is Colchester with rapid access to London and the East of England. We also travel nationwide for scheduled projects and audits.
+            </div>
+          </article>
+
+          <article class="faq__item card-surface" role="listitem">
+            <button class="faq__trigger" aria-expanded="false">
+              <span>How do we contact the helpdesk?</span>
+            </button>
+            <div class="faq__content" hidden>
+              Email support&#64;cerberus-it&#46;co&#46;uk, call 02032 876321, or log a ticket via our client portal. All channels flow to the same live queue so the first available engineer responds.
             </div>
           </article>
         </div>
         <div class="contact-line card-surface" id="contact">
-          <svg viewBox="0 0 256 256" aria-hidden="true">
-            <path
-              d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
-            ></path>
-          </svg>
+          <button class="contact-line__icon" type="button" data-open-contact aria-label="Open contact form">
+            <svg viewBox="0 0 256 256" aria-hidden="true">
+              <path
+                d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"
+              ></path>
+            </svg>
+          </button>
           <p>
-            Reach us at <a href="mailto:support@cerberus-it.co.uk">support@cerberus-it.co.uk</a> or +44 (0)1206 615 300. We’re
-            based at the Innovation Centre, Knowledge Gateway, Colchester, and will schedule onsite visits whenever they’re the
-            fastest fix.
+            Reach us at <a href="mailto:support&#64;cerberus-it&#46;co&#46;uk">support&#64;cerberus-it&#46;co&#46;uk</a> or 02032 876321. We’re based in
+            Colchester, and will schedule onsite visits whenever they’re the fastest fix.
           </p>
+        </div>
+        <div class="contact-modal" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="contact-modal-title">
+          <div class="contact-modal__overlay" data-close-contact></div>
+          <div class="contact-modal__dialog card-surface">
+            <div class="contact-modal__header">
+              <div class="section-intro section-intro--narrow">
+                <p class="section-intro__text" id="contact-modal-title">Plan your next step, speak to an expert or start your IT review.</p>
+              </div>
+              <button class="contact-modal__close" type="button" aria-label="Close contact form" data-close-contact>
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <form class="contact-modal__form stack-col" data-contact-form>
+              <label class="contact-modal__field">
+                <input type="text" name="name" placeholder="Name*" aria-label="Name" required />
+              </label>
+              <label class="contact-modal__field">
+                <input type="email" name="email" placeholder="Email*" aria-label="Email" required />
+              </label>
+              <label class="contact-modal__field">
+                <input type="text" name="company" placeholder="Company" aria-label="Company" />
+              </label>
+              <label class="contact-modal__field">
+                <textarea name="message" rows="4" placeholder="How can we help?*" aria-label="Message" required></textarea>
+              </label>
+              <button class="button-primary contact-modal__submit" type="submit">Send message</button>
+            </form>
+            <p class="contact-modal__footnote">
+              Reach us at <span class="contact-modal__email">support&#64;cerberus-it&#46;co&#46;uk</span> or 02032 876321.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1205,22 +1139,21 @@ The same support pillars you’ll experience day to day.
           <span class="section-pill">READY TO SECURE &amp; SIMPLIFY?</span>
           <div class="hero__headline">
             <span class="hero__logo" aria-hidden="true">
-              <span class="hero__logo-inner">
-                <img
-                  src="https://framerusercontent.com/images/6ZRrNs4Gy2rcMzXTLB8Tl2NZ51I.svg?width=77&height=55"
-                  alt=""
-                />
-              </span>
+              <img
+                src="assets/CerberusLogo-Transparent copy.png"
+                alt="Cerberus IT logo"
+                loading="lazy"
+              />
             </span>
-            <h1 class="section-intro__title">Partner with Cerberus</h1>
+            <h1 class="section-intro__title">Partner with Cerberus <span class="site-logo__accent">IT</span></h1>
           </div>
           <p class="section-intro__text section-intro__text--lead">
             Protect your infrastructure, reduce risk, and keep business running smoothly with intelligent monitoring and human
             engineers on tap.
           </p>
           <div class="hero__actions">
-            <a class="button-primary" href="#pricing">Free audit for you</a>
-            <a class="button-secondary" href="#contact">Get started</a>
+            <button class="button-primary" type="button" data-open-contact>Get started</button>
+            <a class="button-secondary" href="#services">Explore More</a>
           </div>
         </div>
       </section>
@@ -1251,16 +1184,16 @@ The same support pillars you’ll experience day to day.
             <li><a href="#cookies">Cookies</a></li>
             <li><a href="#accessibility">Accessibility</a></li>
             <li><a href="#terms">T&amp;Cs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><button class="site-footer__link" type="button" data-open-contact>Contact</button></li>
           </ul>
         </nav>
         <div class="site-footer__brand">
           <a class="site-logo" href="#hero">
             <img src="assets/CerberusLogo-Transparent.png" alt="Cerberus IT" />
-            <span class="logo-text"><span class="site-logo__mark">Cerberus</span> <span class="site-logo__accent">IT</span></span>
+            <span class="logo-text"><span class="site-logo__mark">Cerberus <span class="site-logo__accent">IT</span></span></span>
           </a>
           <p class="site-footer__meta">
-            &copy; <span data-current-year></span> Orb AI. All rights reserved.
+            &copy; <span data-current-year></span> – All rights reserved.
           </p>
         </div>
       </div>

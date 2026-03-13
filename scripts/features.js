@@ -203,6 +203,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const contactModal = document.getElementById("contact-modal");
+  const openContactButtons = Array.from(document.querySelectorAll("[data-open-contact]"));
+  const closeContactButtons = Array.from(document.querySelectorAll("[data-close-contact]"));
+
+  if (contactModal && (openContactButtons.length || closeContactButtons.length)) {
+    const setModalOpen = isOpen => {
+      contactModal.classList.toggle("is-open", isOpen);
+      contactModal.setAttribute("aria-hidden", String(!isOpen));
+      document.body.classList.toggle("modal-open", isOpen);
+    };
+
+    openContactButtons.forEach(button => {
+      button.addEventListener("click", () => setModalOpen(true));
+    });
+
+    closeContactButtons.forEach(button => {
+      button.addEventListener("click", () => setModalOpen(false));
+    });
+
+    contactModal.addEventListener("click", event => {
+      if (event.target === contactModal) {
+        setModalOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        setModalOpen(false);
+      }
+    });
+  }
+
   const rateControlledVideos = Array.from(document.querySelectorAll("video[data-playback-rate]"));
 
   if (rateControlledVideos.length) {
