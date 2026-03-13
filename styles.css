@@ -2451,7 +2451,7 @@ button,
 .team__card {
   gap: var(--space-md);
   text-align: center;
-  min-height: 580px;
+  min-height: 725px;
 }
 
 .team__profile {
@@ -2575,7 +2575,12 @@ button,
 
 .team__card .cards__media,
 .team__profile .cards__media {
-  height: 65%;
+  height: 78%;
+}
+
+.team__grid .team__card:nth-child(3) .cards__media img {
+  transform: scale(1.3);
+  transform-origin: center;
 }
 
 .faq {
