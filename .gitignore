@@ -1,3 +1,7 @@
 .DS_Store
 orbi-3-3.code-workspace
 scripts/20i-staging*
+scripts/
+.vite/
+.github/
+.env
