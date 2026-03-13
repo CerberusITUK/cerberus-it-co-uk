@@ -332,12 +332,36 @@ main {
 .site-logo {
   grid-area: logo;
   justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
 }
 
 .site-logo img {
-  height: clamp(36px, 5vw, 48px);
+  height: clamp(48px, 6vw, 64px);
   width: auto;
   display: block;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  display: inline-flex;
+  gap: 0.2rem;
+  align-items: baseline;
+}
+
+.site-logo__mark {
+  color: #111;
+}
+
+.site-logo__accent {
+  color: #ed9121;
+  font-weight:500;
 }
 
 .site-nav {
@@ -690,14 +714,17 @@ main {
   height: auto;
   perspective: 1200px;
   padding-right: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 100px;
   margin-bottom: clamp(1rem, 3vw, 2.5rem);
 }
 
 
 .iphone-chat {
   --chat-loop-duration: 24s;
-  --phone-rotate-y: -20deg;
-  --phone-rotate-x: 6deg;
+  --phone-rotate-y: 0deg;
+  --phone-rotate-x: 0deg;
+  --phone-rotate-z: 0deg;
+  --phone-scale: 1;
   position: relative;
   width: min(270px, 70vw);
   height: max-content;
@@ -708,12 +735,18 @@ main {
   border: 0.75px solid rgba(255, 255, 255, 0.85);
   filter: drop-shadow(0 25px 45px rgba(6, 10, 24, 0.55));
   transform-style: preserve-3d;
-  transform: rotateY(var(--phone-rotate-y)) rotateX(var(--phone-rotate-x));
+  transform: rotateY(var(--phone-rotate-y)) rotateX(var(--phone-rotate-x)) rotateZ(var(--phone-rotate-z)) scale(var(--phone-scale));
   transition: transform 0.6s ease;
 }
 
 .iphone-chat:hover {
   transform: rotateY(calc(var(--phone-rotate-y) + 4deg)) rotateX(calc(var(--phone-rotate-x) - 2deg)) translateY(-4px);
+}
+
+.iphone-chat--card {
+  width: min(270px, 70vw);
+  margin: 0 auto;
+  filter: drop-shadow(0 25px 45px rgba(6, 10, 24, 0.55));
 }
 
 .iphone-chat::before {
@@ -1066,6 +1099,21 @@ main {
   letter-spacing: -0.02em;
 }
 
+.cards__media--phone {
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: url("assets/use_the_purple_clouds_as_a_ful_Nano_Banana_2_09002.jpg") center/100% no-repeat;
+  position: relative;
+}
+
+.cards__media--phone .iphone-chat {
+  --phone-rotate-x: -14deg;
+  --phone-rotate-y: 28deg;
+  --phone-rotate-z: 2deg;
+  --phone-scale: 0.9;
+}
+
 .hero__logo {
   display: inline-flex;
   align-items: center;
@@ -1385,14 +1433,18 @@ main {
   gap: var(--space-lg);
   padding: var(--card-padding-sm);
   border-radius: var(--radius-lg);
-  align-items: stretch;
-  min-height: calc(375px + 75px);
+  align-items: flex-start;
+  
 }
 
 .who-support__media {
   flex: 0 0 50%;
+  align-self: flex-start;
   border-radius: var(--radius-md);
   overflow: hidden;
+  aspect-ratio: 4 / 3;
+  
+  
 }
 
 .who-support__video {
@@ -2857,6 +2909,12 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.cards__media-img--connectivity {
+  object-fit: contain;
+  transform: scale(1.1);
+  transform-origin: center;
 }
 
 .cards__media--fixed {

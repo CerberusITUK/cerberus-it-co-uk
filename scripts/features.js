@@ -296,22 +296,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroPhone = document.querySelector(".iphone-chat");
 
   if (heroPhone) {
+    const phoneStyles = window.getComputedStyle(heroPhone);
+    const baseRotateY = parseFloat(phoneStyles.getPropertyValue("--phone-rotate-y")) || 0;
+    const baseRotateX = parseFloat(phoneStyles.getPropertyValue("--phone-rotate-x")) || 0;
+    let phoneInView = false;
+
     const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
     const updatePhoneTilt = () => {
+      if (!phoneInView) return;
       const rect = heroPhone.getBoundingClientRect();
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       const viewportCenter = viewportHeight / 2;
       const phoneCenter = rect.top + rect.height / 2;
       const distance = phoneCenter - viewportCenter;
       const normalized = clamp(distance / (viewportHeight * 0.6), -1, 1);
-      const rotateY = -30 + normalized * 24;
-      const rotateX = 12 - normalized * 16;
+      const rotateY = baseRotateY + normalized * 8;
+      const rotateX = baseRotateX - normalized * 6;
       heroPhone.style.setProperty("--phone-rotate-y", `${rotateY}deg`);
       heroPhone.style.setProperty("--phone-rotate-x", `${rotateX}deg`);
     };
 
+    const phoneObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          phoneInView = entry.isIntersecting;
+          if (phoneInView) {
+            updatePhoneTilt();
+          } else {
+            heroPhone.style.setProperty("--phone-rotate-y", `${baseRotateY}deg`);
+            heroPhone.style.setProperty("--phone-rotate-x", `${baseRotateX}deg`);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    phoneObserver.observe(heroPhone);
+
     const throttledPhoneTilt = rafThrottle(updatePhoneTilt);
-    updatePhoneTilt();
     window.addEventListener("scroll", throttledPhoneTilt, { passive: true });
     window.addEventListener("resize", throttledPhoneTilt);
   }
