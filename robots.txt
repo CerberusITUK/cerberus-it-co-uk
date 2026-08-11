@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cerberusituk.github.io/cerberus-it-co-uk/sitemap.xml

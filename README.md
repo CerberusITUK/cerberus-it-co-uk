@@ -5,13 +5,15 @@ Cerberus IT's marketing site for showcasing services, insight hubs, and supporti
 ### Project structure
 - `index.html` – main page markup
 - `styles.css` – global styling, component layouts, animations
-- `scripts/features.js` – interactive behaviors (parallax, video ping-pong, tabs, etc.)
+- `scripts/features.js` – interactive behaviors (parallax, video ping-pong, tabs, contact form, etc.)
 - `assets/` – images, videos, and fonts
+- `robots.txt` – search engine crawl rules
+- `sitemap.xml` – site map for search engines
 
 ### Local development
-1. Open the project folder (`/Users/dan/Documents/web-tests/orbi-3-3`).
+1. Clone the repo.
 2. Edit HTML/CSS/JS files directly (no build step required).
-3. Use a simple static server (e.g., `npx serve .`) or a Live Server extension to preview `index.html` while editing.
+3. Use a simple static server (e.g., `npx serve .` or `python3 -m http.server`) to preview `index.html` while editing.
 
 ### Git workflow
 ```bash
@@ -23,4 +25,10 @@ git push origin main
 ```
 
 ### Deployment
-Current hosting is manual. To deploy elsewhere (Netlify, Vercel, S3, etc.), point the service at this repo or upload the static files from the project root.
+The site is hosted on **GitHub Pages**, served from the root of the `main` branch. Pushes to `main` automatically trigger a rebuild.
+
+- **Live site:** https://cerberusituk.github.io/cerberus-it-co-uk/
+- **Pages settings:** repo Settings → Pages
+
+### Contact form
+The contact form submits to [FormSubmit](https://formsubmit.co/), which forwards submissions to `support@cerberus-it.co.uk`. The first submission triggers a one-time confirmation email that must be actioned to activate the endpoint.
