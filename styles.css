@@ -2802,6 +2802,18 @@ button,
   align-self: flex-end;
 }
 
+.contact-modal__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-modal__status {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  min-height: 1.2em;
+}
+
 .contact-modal__footnote {
   margin: var(--space-md) 0 0;
   font-size: 0.95rem;

@@ -233,6 +233,43 @@ document.addEventListener("DOMContentLoaded", () => {
         setModalOpen(false);
       }
     });
+
+    const contactForm = document.querySelector("[data-contact-form]");
+    const statusEl = document.querySelector("[data-contact-status]");
+    if (contactForm) {
+      contactForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const submitBtn = contactForm.querySelector(".contact-modal__submit");
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+        if (statusEl) statusEl.textContent = "";
+
+        fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        })
+          .then(response => {
+            if (response.ok) {
+              contactForm.reset();
+              if (statusEl) statusEl.textContent = "Thanks — your message has been sent. We'll be in touch shortly.";
+              submitBtn.textContent = "Sent ✓";
+              setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+              }, 4000);
+            } else {
+              throw new Error("Form submission failed");
+            }
+          })
+          .catch(() => {
+            if (statusEl) statusEl.textContent = "Sorry, something went wrong. Please email us directly at support@cerberus-it.co.uk.";
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          });
+      });
+    }
   }
 
   const rateControlledVideos = Array.from(document.querySelectorAll("video[data-playback-rate]"));

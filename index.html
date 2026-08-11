@@ -1093,7 +1093,13 @@ The same support pillars you’ll experience day to day.
                 <span aria-hidden="true">×</span>
               </button>
             </div>
-            <form class="contact-modal__form stack-col" data-contact-form>
+            <form class="contact-modal__form stack-col" data-contact-form
+              action="https://formsubmit.co/support@cerberus-it.co.uk"
+              method="POST">
+              <input type="hidden" name="_subject" value="New enquiry from cerberus-it.co.uk" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style="display:none" aria-hidden="true" />
               <label class="contact-modal__field">
                 <input type="text" name="name" placeholder="Name*" aria-label="Name" required />
               </label>
@@ -1107,6 +1113,7 @@ The same support pillars you’ll experience day to day.
                 <textarea name="message" rows="4" placeholder="How can we help?*" aria-label="Message" required></textarea>
               </label>
               <button class="button-primary contact-modal__submit" type="submit">Send message</button>
+              <p class="contact-modal__status" data-contact-status role="status" aria-live="polite"></p>
             </form>
             <p class="contact-modal__footnote">
               Reach us at <span class="contact-modal__email">support&#64;cerberus-it&#46;co&#46;uk</span> or 02032 876321.
